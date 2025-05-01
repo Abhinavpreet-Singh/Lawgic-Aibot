@@ -1,0 +1,42 @@
+# Environment variables
+.env
+
+# Python virtual environment
+venv/
+env/
+ENV/
+
+# Python cache files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Local development settings
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Vector store files (if you want to regenerate them each time)
+# Uncomment if you don't want to commit these
+# faiss_index/
+
+# Local pickle files
+*.pkl
+
+# Logs
+*.log
+
+# OS specific files
+.DS_Store
+Thumbs.db
