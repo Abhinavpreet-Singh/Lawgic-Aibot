@@ -16,6 +16,13 @@ load_dotenv()
 api_key = os.getenv("GOOGLE_API_KEY")
 genai.configure(api_key=api_key)
 
+# Function to load and encode the favicon
+def get_favicon():
+    favicon_path = "logo_latest.png"
+    if os.path.exists(favicon_path):
+        return favicon_path
+    return None
+
 # Function to extract text from PDFs
 def get_pdf_text(pdf_docs):
     text = ""
@@ -96,10 +103,11 @@ def add_logo():
 
 # Streamlit UI setup
 def main():
-    # Set page configuration
+    # Set page configuration with custom favicon
+    favicon = get_favicon()
     st.set_page_config(
         page_title="Lawgic | Chat with Legal Documents",
-        page_icon="⚖️",
+        page_icon=favicon if favicon else None,
         layout="wide"
     )
     

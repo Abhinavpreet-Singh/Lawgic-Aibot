@@ -59,17 +59,8 @@ def get_conversational_chain():
 
 
 def add_logo():
-    st.markdown(
-        """
-        <div style="text-align: center; margin-bottom: 30px; padding: 20px 0; border-bottom: 1px solid #a7967e;">
-            <h1 style="font-size: 42px; font-weight: 800; color: #251c1a; letter-spacing: 2px; margin-bottom: 0;">
-                <span style="color: #826f5a;">L</span>AWGIC
-            </h1>
-            <p style="font-size: 14px; color: #826f5a; letter-spacing: 1px; margin-top: 0;">Legal Intelligence Platform</p>
-        </div>
-        """,
-        unsafe_allow_html=True
-    )
+    # Logo has been removed
+    pass
 
 def user_input(user_question):
     embeddings = GoogleGenerativeAIEmbeddings(model = "models/embedding-001")
@@ -99,14 +90,18 @@ def main():
     # Set page configuration
     st.set_page_config(
         page_title="Lawgic | Chat with Legal Documents",
-        page_icon="⚖️",
         layout="wide"
     )
     
     # Apply custom CSS with direct styling
     st.markdown(
-        """
+        """p
         <style>
+        /* Hide favicon */
+        link[rel="icon"] {
+            display: none !important;
+        }
+        
         /* Base styles */
         body {
             background-color: #f3eee5;
